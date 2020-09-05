@@ -13,12 +13,15 @@ class Conta(
     }
 
     fun saque(valor: Double) {
-        if (valor <= saldoConta) {
-            saldoConta -= valor
-            println("Seu saque foi realizado com sucesso, seu novo saldo é : $saldoConta")
+        when {
+            valor <= saldoConta -> {
+                saldoConta -= valor
+                println("Seu saque foi realizado com sucesso, seu novo saldo é : $saldoConta")
 
-        } else {
-            println("Saldo insuficiente!!!")
+            }
+            else -> {
+                println("Saldo insuficiente!!!")
+            }
         }
     }
 
