@@ -1,6 +1,6 @@
 package br.bancosantanderexercicio.com
 
-class Conta(
+ abstract class Conta(
         var numeroConta: Int,
         var saldoConta: Double,
         var cliente: Cliente
@@ -9,22 +9,16 @@ class Conta(
     fun deposito(valor: Double) {
         saldoConta += valor
         println("Seu deposito foi realizado com sucesso, seu novo saldo é : $saldoConta")
-
     }
 
-    fun saque(valor: Double) {
-        when {
-            valor <= saldoConta -> {
-                saldoConta -= valor
-                println("Seu saque foi realizado com sucesso, seu novo saldo é : $saldoConta")
+   abstract fun saque(valor: Double)
 
-            }
-            else -> {
-                println("Saldo insuficiente!!!")
-            }
-        }
-    }
+   abstract fun consultarSaldo()
+
+ }
 
 
-}
+
+
+
 
